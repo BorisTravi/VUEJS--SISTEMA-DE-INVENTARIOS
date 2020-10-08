@@ -17,7 +17,7 @@
                 <v-list-item-title>Almacén</v-list-item-title>
               </v-list-item-content>      
             </v-list-item>
-            <v-list-item :to="{ name: 'Categoria'}">
+            <v-list-item :to="{ name: 'categorias'}">
               <v-list-item-action>
                 <v-icon>table_chart</v-icon>
               </v-list-item-action>
@@ -25,7 +25,7 @@
                 <v-list-item-title>Categorías</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item :to="{ name: 'Articulo'}">
+            <v-list-item :to="{ name: 'articulos'}">
               <v-list-item-action>
                 <v-icon>table_chart</v-icon>
               </v-list-item-action>
@@ -50,7 +50,7 @@
                 <v-list-item-title>Ingresos</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item :to="{ name: 'Proveedores'}">
+            <v-list-item :to="{ name: 'proveedores'}">
               <v-list-item-action>
                 <v-icon>table_chart</v-icon>
               </v-list-item-action>
@@ -92,7 +92,7 @@
                 <v-list-item-title>Accesos</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item :to="{ name: 'Roles'}">
+            <v-list-item :to="{ name: 'roles'}">
               <v-list-item-action>
                 <v-icon>table_chart</v-icon>
               </v-list-item-action>
@@ -100,7 +100,7 @@
                 <v-list-item-title>Roles</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item :to="{ name: 'Usuarios'}">
+            <v-list-item :to="{ name: 'usuarios'}">
               <v-list-item-action>
                 <v-icon>table_chart</v-icon>
               </v-list-item-action>
@@ -173,7 +173,6 @@ export default {
   computed:{
     logueado(){
       return this.$store.state.usuario;
-
     },
     esAdministrador(){
       return this.$store.state.usuario && this.$store.state.usuario.rol == 'Administrador';
@@ -185,9 +184,11 @@ export default {
       return this.$store.state.usuario && this.$store.state.usuario.rol == 'Vendedor';
     }
   },
+
   created(){
     this.$store.dispatch("autoLogin")
   },
+
   methods:{
 
   }

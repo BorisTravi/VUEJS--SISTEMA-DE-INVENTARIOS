@@ -14,7 +14,7 @@ export default new Vuex.Store({
     setToken(state, token){
       state.token=token
     },
-    setUsuario(state, usuario){
+    setUsuario(state,usuario){
       state.usuario=usuario
     }
   },
@@ -31,13 +31,12 @@ export default new Vuex.Store({
         commit("setusuario", decode(token))
       }
       router.push({name: 'home'})
-
     },
     salir({commit}){
       commit("setToken", null)
       commit("setUsuario", null)
       localStorage.removeItem("token")
-      router.push({name:"login"})
+      router.push({name: 'login'})
       
     }
   }
